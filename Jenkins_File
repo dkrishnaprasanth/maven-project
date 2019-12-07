@@ -1,12 +1,13 @@
 pipeline
-
-agent any 
-
-stages
 {
-	stage ('git clone')
-	{
-		git 'https://github.com/dkrishnaprasanth/maven-project'
-	}
+	agent any 
 
+		stages
+			{
+				stage ('git clone')
+					{
+						git 'https://github.com/dkrishnaprasanth/maven-project'
+					}
+
+			}
 }
