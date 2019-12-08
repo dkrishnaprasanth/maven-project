@@ -22,7 +22,7 @@ pipeline
 							}
 						}
 					}
-				stage ('deploy')
+				stage ('install')
 					{
 						steps
 						{
@@ -31,7 +31,19 @@ pipeline
     							sh 'mvn install'
 							}	
 						}
+					}
+				stage ('deploy')
+					{
+						steps
+						{
+						
+						agent(['tomcat_ssh'])
+							{
+  							sh ' scp -o StrictHostKeyChecking=no */target/*.war ec2-user@<172.31.39.44>:/var/lib/tomcat/webapps'
+							}	
+						}
 					}	
+	
 
 			}
 }
