@@ -11,6 +11,17 @@ pipeline
 						git 'https://github.com/dkrishnaprasanth/maven-project'
 						}
 					}
+				stage('complie maven')
+					{
+					
+						steps
+						{
+						withMaven(jdk: 'Java1_8', maven: 'LocalMaven') 
+							{
+    							sh 'mvn complie'
+							}
+						}
+					}
 
 			}
 }
