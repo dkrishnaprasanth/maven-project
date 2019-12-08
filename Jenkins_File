@@ -22,13 +22,13 @@ pipeline
 							}
 						}
 					}
-				stage ('test')
+				stage ('deploy')
 					{
 						steps
 						{
 						withMaven(jdk: 'Java1_8', maven: 'LocalMaven') 
 							{
-    							sh 'mvn test'
+    							sh 'mvn clean deploy'
 							}	
 						}
 					}	
