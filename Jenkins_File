@@ -37,7 +37,7 @@ pipeline
 						steps
 						{
 						
-						agent(['tomcat_ssh'])
+						sshagent(['tomcat_ssh'])
 							{
   							sh ' scp -o StrictHostKeyChecking=no */target/*.war ec2-user@<172.31.39.44>:/var/lib/tomcat/webapps'
 							}	
