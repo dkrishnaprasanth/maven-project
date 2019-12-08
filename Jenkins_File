@@ -28,7 +28,7 @@ pipeline
 						{
 						withMaven(jdk: 'Java1_8', maven: 'LocalMaven') 
 							{
-    							sh 'mvn clean deploy'
+    							sh 'mvn deploy'
 							}	
 						}
 					}	
